@@ -23,17 +23,19 @@ network:
 
 # Update GitHub Info
 
-This agentic workflow updates [site/content/github-info.md](site/content/github-info.md) by reading local notes and fetching the GitHub Blog, then proposing changes in a pull request for Mona to review.
+Read `notes/mona-notes.md` before making changes.
+
+This agentic workflow updates [site/content/github-info.md](site/content/github-info.md) by using Mona's notes and official GitHub sources, then proposing changes in a pull request for Mona to review.
 
 ## Agent Instructions
 
-- Read `notes/mona-notes.md` from the repository and extract any items relevant to GitHub platform news or changelog entries.
-- Web fetch the following URLs and extract recent headlines and summaries:
-  - https://github.blog/latest/
-  - https://github.blog/changelog/
-- Combine the fetched items with the local notes, deduplicate, and write a concise, human-friendly update into `site/content/github-info.md`. Preserve frontmatter in that file if present; only replace or update the content/body section.
-- Use the `create-pull-request` tool with `safe-outputs: true` to propose the change. Create a branch named `update/github-info-YYYYMMDD` (use today's date), and open a PR against `main` titled `Update GitHub info — YYYY-MM-DD` with a clear description and request Mona's review.
-- Do not auto-compile this workflow. The markdown file is the source of truth and should remain uncompiled in the repo.
+- Read `notes/mona-notes.md` and use Mona's notes as a source.
+- Use the GitHub Blog: https://github.blog/latest/.
+- Use the GitHub Changelog: https://github.blog/changelog/.
+- Update `site/content/github-info.md` with concise, practical updates for readers.
+- Preserve frontmatter in that file if present; only replace or update the content/body section.
+- Create a pull request for Mona to review using `safe-outputs.create-pull-request`.
+- Do not auto-compile this workflow. The markdown workflow file is the source of truth and should remain uncompiled in the repo.
 
 ## Safety & Access
 
