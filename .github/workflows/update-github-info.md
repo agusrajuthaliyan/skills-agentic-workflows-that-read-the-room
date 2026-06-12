@@ -18,7 +18,7 @@ permissions:
 network:
   allowed:
     - github.com
-    - github.blog
+    - github.blog # Allows access to GitHub Blog and Changelog sources
 ---
 
 # Update GitHub Info
@@ -30,7 +30,7 @@ Use these sources:
 - GitHub Blog: https://github.blog/latest/
 - GitHub Changelog: https://github.blog/changelog/
 
-Update `site/content/github-info.md` with concise, practical updates for readers and include source context when content comes from the GitHub Blog or GitHub Changelog.
+Update `site/content/github-info.md` with concise, practical updates for readers and include source context when content comes from the GitHub Blog and Changelog.
 
 Open a pull request for Mona to review.
 Use a pull request title that mentions Mona or GitHub Info.
@@ -38,7 +38,7 @@ Do not write directly to `main`; rely on `safe-outputs` with `create-pull-reques
 
 ## Agent Instructions
 
-When creating or editing agentic workflow files, do not compile them. Only create or update the markdown workflow file.
+When creating or editing agentic workflow files, do not compile them. Only create or update the markdown workflow file. This is the no auto-compile rule.
 
 - Read `notes/mona-notes.md` and use Mona's notes as a source.
 - Use the GitHub Blog: https://github.blog/latest/.
