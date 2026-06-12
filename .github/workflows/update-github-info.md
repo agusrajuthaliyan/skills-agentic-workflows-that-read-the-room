@@ -12,10 +12,12 @@ safe-outputs:
   create-pull-request:
     title-prefix: "[mona] "
     draft: false
+    fallback-as-issue: false
 permissions:
   contents: read
 network:
   allowed:
+    - github.com
     - github.blog
 ---
 
@@ -31,6 +33,7 @@ This agentic workflow updates [site/content/github-info.md](site/content/github-
   - https://github.blog/changelog/
 - Combine the fetched items with the local notes, deduplicate, and write a concise, human-friendly update into `site/content/github-info.md`. Preserve frontmatter in that file if present; only replace or update the content/body section.
 - Use the `create-pull-request` tool with `safe-outputs: true` to propose the change. Create a branch named `update/github-info-YYYYMMDD` (use today's date), and open a PR against `main` titled `Update GitHub info — YYYY-MM-DD` with a clear description and request Mona's review.
+- Do not auto-compile this workflow. The markdown file is the source of truth and should remain uncompiled in the repo.
 
 ## Safety & Access
 
